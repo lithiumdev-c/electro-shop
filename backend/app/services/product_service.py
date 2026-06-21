@@ -36,3 +36,5 @@ class ProductService:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
         product = self.product_repository.create(product_data)
         return ProductResponse.model_validate(product)
+    
+    

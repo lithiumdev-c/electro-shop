@@ -1,7 +1,7 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    app_name: str = "Robo shop"
+    app_name: str = "Electro-shop"
     debug: bool = True
     database_url: str = "postgresql+psycopg://postgres:admin@127.0.0.1:15432/postgres"
     cors_origins: list = [
