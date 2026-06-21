@@ -12,7 +12,7 @@ class CartItemUpdate(BaseModel):
     product_id: int = Field(..., description="Product id")
     quantity: int = Field(..., gt=0, description="Quantity (must be greater than 0)")
 
-class CartItem:
+class CartItem(BaseModel):
     product_id: int
     name: str = Field(..., description="Product name")
     price: float = Field(..., description="Product price")
