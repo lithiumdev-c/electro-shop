@@ -57,6 +57,4 @@ class CartService:
                 total_price += subtotal
                 total_items += quantity
         
-        return CartItemResponse(items=cart_items, total=round(total_price), items_count=total_items)
-
-
+        return CartItemResponse(items=cart_items, total=round(total_price, 2), items_count=total_items)

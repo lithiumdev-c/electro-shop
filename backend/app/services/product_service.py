@@ -31,10 +31,8 @@ class ProductService:
         return ProductListResponse(products=products_response, total = len(products_response))
 
     def create_product(self, product_data: ProductCreate) -> ProductResponse:
-        category = self.product_repository.get_by_id(product_data.category_id)
+        category = self.category_repository.get_by_id(product_data.category_id)
         if not category:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
         product = self.product_repository.create(product_data)
         return ProductResponse.model_validate(product)
-    
-    

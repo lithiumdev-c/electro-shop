@@ -47,5 +47,5 @@ def update_cart_item(request: UpdateCartRequest, db: Session = Depends(get_db)):
 @router.delete("/delete", status_code=status.HTTP_200_OK)
 def remove_from_cart(product_id: int, request: RemoveCartRequest, db: Session = Depends(get_db)):
     service = CartService(db)
-    updated_cart = service.remove_from_cart(request.cart, product_id)
+    updated_cart = service.remove_cart_item(request.cart, product_id)
     return {"cart": updated_cart}
